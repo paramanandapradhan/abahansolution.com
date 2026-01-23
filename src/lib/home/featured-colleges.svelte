@@ -37,7 +37,7 @@
 		class="pointer-events-none absolute bottom-0 left-0 h-64 w-64 rounded-full bg-emerald-200/40 blur-[80px]"
 	></div>
 
-	<div class="relative mx-auto max-w-7xl px-4 py-16 sm:py-20 lg:px-8" use:scrollReveal>
+	<div class="relative mx-auto max-w-7xl px-4 py-12 sm:py-16 lg:px-8" use:scrollReveal>
 		<div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
 			<div>
 				<p

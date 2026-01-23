@@ -27,7 +27,7 @@
 		class="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-primary-200/40 blur-[90px]"
 	></div>
 
-	<div class="relative mx-auto max-w-7xl px-4 py-16 sm:py-20 lg:px-8" use:scrollReveal>
+	<div class="relative mx-auto max-w-7xl px-4 py-12 sm:py-16 lg:px-8" use:scrollReveal>
 		<div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
 			<div class="max-w-xl space-y-4">
 				<p

@@ -32,7 +32,7 @@
 		class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom,_rgba(14,165,233,0.12),transparent_50%)]"
 	></div>
 
-	<div class="relative mx-auto max-w-7xl px-4 py-16 sm:py-20 lg:px-8" use:scrollReveal>
+	<div class="relative mx-auto max-w-7xl px-4 py-12 sm:py-16 lg:px-8" use:scrollReveal>
 		<div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
 			<div class="space-y-6">
 				<p
