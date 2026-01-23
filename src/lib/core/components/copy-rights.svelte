@@ -1,12 +1,14 @@
 <script lang="ts">
 	const currentYear = new Date().getFullYear();
 
-	const quickLinks = [
+	type QuickLink = { label: string; href: string; external?: boolean };
+
+	const quickLinks: QuickLink[] = [
 		{ label: 'Privacy', href: '/privacy' },
 		{ label: 'Terms & Conditions', href: '/term' },
-		{ label: 'Support', href: '/contact' },
-		{ label: 'Docs', href: 'https://docs.hellocall.ai', external: true },
-		{ label: 'Blog', href: 'https://blog.hellocall.ai', external: true }
+		{ label: 'Colleges', href: '/colleges' },
+		{ label: 'Contact', href: '/contact' },
+		{ label: 'About', href: '/about' }
 	];
 </script>
 
@@ -18,8 +20,8 @@
 		<div class="flex flex-col items-center gap-4 text-xs text-neutral-600 md:flex-row md:justify-between">
 			<p class="text-center md:text-left">
 				<span>&copy; {currentYear} </span>
-				<a href="https://hellocall.ai" target="_blank" rel="noopener noreferrer" class="font-semibold text-neutral-800">
-					hellocall.ai
+				<a href="/" class="font-semibold text-neutral-800">
+					Abahan Solutions
 				</a>
 				<span> All rights reserved.</span>
 			</p>

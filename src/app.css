@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
@@ -39,6 +40,9 @@
 
 	--color-primary: var(--color-primary-600);
 	--color-neutral: var(--color-neutral-700);
+
+	--font-display: 'Fraunces', serif;
+	--font-body: 'Plus Jakarta Sans', sans-serif;
 }
 
 /* @theme .dark {
@@ -48,6 +52,12 @@
 	--color-primary: var(--color-primary-500);
 	--color-neutral: var(--color-neutral-200);
 } */
+
+body {
+	font-family: var(--font-body);
+	color: var(--color-foreground);
+	background-color: var(--color-background);
+}
 
 .flex-nowrap {
 	-ms-overflow-style: none;

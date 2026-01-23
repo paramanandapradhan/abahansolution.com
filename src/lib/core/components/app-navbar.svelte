@@ -23,6 +23,8 @@
 		subtitleClassName = '!text-gray-600 !text-md !leading-tight !px-0 !-mt-1'
 	}: Props & NavbarProps = $props();
 
+	let showLogo = $derived(Boolean(hasLogo && logoImgSrc));
+
 	let pageMenus = [
 		{ id: 'home', title: 'Home', url: '/', isExternal: false },
 		{ id: 'about', title: 'About', url: '/about', isExternal: false },
@@ -106,7 +108,7 @@
 		>
 			<div class="mb-4 flex items-center justify-between gap-3">
 				<div class="flex min-w-0 flex-1 items-center gap-2">
-					{#if hasLogo}
+					{#if showLogo}
 						<img
 							src={logoImgSrc}
 							alt="Logo"
@@ -178,7 +180,7 @@
 	<Navbar
 		{hasBack}
 		className={`${className} static! border-0! shadow-none! bg-transparent! dark:bg-transparent!`}
-		{hasLogo}
+		hasLogo={showLogo}
 		{logoImgSrc}
 		{logoImgClassName}
 		{logoButtonClassName}

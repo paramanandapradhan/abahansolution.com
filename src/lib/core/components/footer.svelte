@@ -1,27 +1,26 @@
 <script lang="ts">
 	import { Icon } from '@cloudparker/moldex.js';
-	import { mdiEmailOutline, mdiFacebook, mdiInstagram, mdiLinkedin, mdiPhone, mdiTwitter, mdiYoutube } from '../services/app-icons-service';
+	import { mdiEmailOutline, mdiPhone } from '../services/app-icons-service';
+
+	type FooterLink = { label: string; href: string; external?: boolean };
 
 	const socialLinks = [
-		{ href: 'https://www.facebook.com/HelloCallai', icon: mdiFacebook, label: 'Facebook' },
-		{ href: 'https://www.instagram.com/hellocall.ai/', icon: mdiInstagram, label: 'Instagram' },
-		{ href: 'https://x.com/hellocallai', icon: mdiTwitter, label: 'X (Twitter)' },
-		{ href: 'https://www.linkedin.com/company/hellocall-ai/', icon: mdiLinkedin, label: 'LinkedIn' },
-		{ href: 'https://www.youtube.com/@hellocallai', icon: mdiYoutube, label: 'YouTube' }
+		{ href: 'tel:+917735477511', icon: mdiPhone, label: 'Call', external: false },
+		{ href: 'mailto:abahansolution@gmail.com', icon: mdiEmailOutline, label: 'Email', external: false }
 	];
 
-	const companyLinks = [
+	const companyLinks: FooterLink[] = [
 		{ label: 'Home', href: '/' },
-		{ label: 'Use Case', href: '/use-case' },
 		{ label: 'About Us', href: '/about' },
+		{ label: 'Colleges', href: '/colleges' },
 		{ label: 'Contact', href: '/contact' }
 	];
 
-	const resourceLinks = [
-		{ label: 'Pricing', href: '/pricing' },
-		{ label: 'FAQs', href: '/contact#faq' },
-		{ label: 'Blog', href: 'https://blog.hellocall.ai', external: true },
-		{ label: 'Docs', href: 'https://docs.hellocall.ai', external: true }
+	const resourceLinks: FooterLink[] = [
+		{ label: 'Privacy Policy', href: '/privacy' },
+		{ label: 'Terms & Conditions', href: '/term' },
+		{ label: 'Colleges', href: '/colleges' },
+		{ label: 'Contact', href: '/contact' }
 	];
 </script>
 
@@ -36,7 +35,7 @@
 	></div>
 	<div
 		aria-hidden="true"
-		class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(124,58,237,0.12),transparent_55%)]"
+		class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(14,116,144,0.12),transparent_55%)]"
 	></div>
 
 	<div class="relative mx-auto w-full max-w-7xl px-4 py-16 sm:py-20 lg:py-24">
@@ -45,26 +44,29 @@
 				<div class="flex items-center gap-3">
 					<a
 						href="/"
-						class="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/70 bg-white/90 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+						class="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/70 bg-white/90 text-sm font-black text-primary-700 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+						aria-label="Abahan Solutions"
 					>
-						<img src="/icons/web/icon-192.png" alt="HelloCall AI logo" class="h-8 w-8" />
+						AS
 					</a>
 					<div>
-						<p class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-primary-500">HelloCall AI</p>
-						<h2 class="text-lg font-black tracking-[0.18em] text-neutral-900">HELLOCALL</h2>
+						<p class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-primary-500">
+							Admission Consulting
+						</p>
+						<h2 class="text-lg font-black tracking-[0.18em] text-neutral-900">ABAHAN SOLUTIONS</h2>
 					</div>
 				</div>
 
 				<p class="text-sm text-neutral-600">
-					Agentic voice and chat automation for inbound and outbound calls, WhatsApp support, web call, and web chat.
+					Admission consulting for MBBS, engineering, management, and more across Odisha and India.
 				</p>
 
 				<div class="flex flex-wrap gap-3">
 					{#each socialLinks as link}
 						<a
 							href={link.href}
-							target="_blank"
-							rel="noopener noreferrer"
+							target={link.external ? '_blank' : undefined}
+							rel={link.external ? 'noopener noreferrer' : undefined}
 							aria-label={link.label}
 							class="group relative"
 						>
@@ -81,11 +83,15 @@
 				</div>
 
 				<div class="flex flex-wrap gap-2">
-					<span class="rounded-full bg-white/90 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-primary-600 shadow-sm">
-						24/7 Voice AI
+					<span
+						class="rounded-full bg-white/90 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-primary-600 shadow-sm"
+					>
+						Trusted counselors
 					</span>
-					<span class="rounded-full bg-white/90 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-primary-600 shadow-sm">
-						Omnichannel
+					<span
+						class="rounded-full bg-white/90 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-primary-600 shadow-sm"
+					>
+						Transparent process
 					</span>
 				</div>
 			</div>
@@ -128,11 +134,11 @@
 
 			<div class="flex flex-col gap-6 lg:col-span-3">
 				<div class="rounded-3xl border border-white/70 bg-white/90 p-5 shadow-sm">
-					<p class="text-sm font-semibold text-neutral-900">We'd love to hear from you!</p>
-					<p class="mt-2 text-xs text-neutral-600">Reach out any time. Our team replies fast.</p>
+					<p class="text-sm font-semibold text-neutral-900">We are here to help.</p>
+					<p class="mt-2 text-xs text-neutral-600">Reach out any time. Our counselors reply fast.</p>
 					<div class="mt-4 space-y-3">
 						<a
-							href="tel:+91-8035316100"
+							href="tel:+917735477511"
 							class="group flex items-center gap-3 text-sm text-neutral-700 transition hover:text-primary-600"
 						>
 							<span
@@ -140,10 +146,10 @@
 							>
 								<Icon path={mdiPhone} className="h-4 w-4" />
 							</span>
-							+91-8035316100
+							+91-7735477511
 						</a>
 						<a
-							href="mailto:support@hellocall.ai"
+							href="mailto:abahansolution@gmail.com"
 							class="group flex items-center gap-3 text-sm text-neutral-700 transition hover:text-primary-600"
 						>
 							<span
@@ -151,7 +157,7 @@
 							>
 								<Icon path={mdiEmailOutline} className="h-4 w-4" />
 							</span>
-							support@hellocall.ai
+							abahansolution@gmail.com
 						</a>
 					</div>
 				</div>
@@ -160,22 +166,22 @@
 					<div
 						class="relative rounded-[calc(1.5rem-1px)] bg-white/95 p-5 shadow-lg transition duration-300 group-hover:-translate-y-1 group-hover:shadow-primary-200/60"
 					>
-						<p class="text-sm font-semibold text-neutral-900">Need a custom plan?</p>
-						<p class="mt-2 text-xs text-neutral-600">
-							Tell us your call volume and channels. We'll craft the perfect AI stack for your team.
-						</p>
-						<a
-							href="/contact"
+					<p class="text-sm font-semibold text-neutral-900">Need a custom shortlist?</p>
+					<p class="mt-2 text-xs text-neutral-600">
+						Share your scores and goals. We will prepare a curated list with guidance.
+					</p>
+					<a
+						href="/contact"
 							class="mt-4 inline-flex items-center justify-center rounded-full bg-linear-to-r from-primary-400 via-primary-500 to-primary-700 px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
 						>
-							Contact Us
-						</a>
-						<div class="mt-3 flex items-center gap-2 text-[0.65rem] text-neutral-500">
-							<span class="inline-flex h-2 w-2 rounded-full bg-primary-500/80 motion-safe:animate-pulse"></span>
-							<span>Support team online now</span>
-						</div>
+						Contact Us
+					</a>
+					<div class="mt-3 flex items-center gap-2 text-[0.65rem] text-neutral-500">
+						<span class="inline-flex h-2 w-2 rounded-full bg-primary-500/80 motion-safe:animate-pulse"></span>
+						<span>Counselor team online now</span>
 					</div>
 				</div>
+			</div>
 			</div>
 		</div>
 
@@ -184,12 +190,14 @@
 				aria-hidden="true"
 				class="pointer-events-none absolute left-1/2 top-2 w-full -translate-x-1/2 text-center text-[2.2rem] font-black tracking-[0.2em] text-primary-500/10 sm:text-[3.5rem] md:text-[4.5rem] lg:text-[6rem]"
 			>
-				HELLOCALL.AI
+				ABAHAN SOLUTIONS
 			</p>
 			<div class="relative flex flex-col items-center justify-center gap-2 text-center">
-				<p class="text-xs font-semibold uppercase tracking-[0.4em] text-neutral-500">Built for modern AI calling teams</p>
+				<p class="text-xs font-semibold uppercase tracking-[0.4em] text-neutral-500">
+					Trusted admission partners
+				</p>
 				<p class="footer-brand text-3xl font-black tracking-[0.35em] sm:tracking-[0.5em] sm:text-4xl">
-					HELLOCALL.AI
+					ABAHAN SOLUTIONS
 				</p>
 			</div>
 		</div>
@@ -198,13 +206,13 @@
 
 <style>
 	.footer-gradient {
-		background-image: linear-gradient(120deg, rgba(129, 140, 248, 0.45), rgba(56, 189, 248, 0.4), rgba(147, 51, 234, 0.45));
+		background-image: linear-gradient(120deg, rgba(14, 165, 233, 0.45), rgba(56, 189, 248, 0.4), rgba(16, 185, 129, 0.45));
 		background-size: 200% 200%;
 		animation: footer-gradient 10s ease infinite;
 	}
 
 	.footer-brand {
-		background-image: linear-gradient(120deg, rgba(147, 51, 234, 0.95), rgba(56, 189, 248, 0.85), rgba(99, 102, 241, 0.95));
+		background-image: linear-gradient(120deg, rgba(14, 165, 233, 0.95), rgba(59, 130, 246, 0.85), rgba(16, 185, 129, 0.95));
 		background-size: 200% 200%;
 		animation: footer-brand 12s ease infinite;
 		-webkit-background-clip: text;
