@@ -1,0 +1,67 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+@source "../node_modules/@cloudparker/moldex.js";
+
+
+
+@theme {
+	/* PRIMARY (BLUE THEME) */
+		--color-primary-50:  #f0f7ff;
+		--color-primary-100: #e0efff;
+		--color-primary-200: #c7e0ff;
+		--color-primary-300: #9ec8ff;
+		--color-primary-400: #6ea8ff;
+		--color-primary-500: #3b82f6;  /* main primary */
+		--color-primary-600: #2563eb;
+		--color-primary-700: #1d4ed8;
+		--color-primary-800: #1e40af;
+		--color-primary-900: #1e3a8a;
+		--color-primary-950: #172554;
+
+
+	/* neutral (neutral) */
+	--color-neutral-50: #f8fafc;
+	--color-neutral-100: #f1f5f9;
+	--color-neutral-200: #e2e8f0;
+	--color-neutral-300: #cbd5e1;
+	--color-neutral-400: #94a3b8;
+	--color-neutral-500: #64748b;
+	--color-neutral-600: #475569;
+	--color-neutral-700: #334155;
+	--color-neutral-800: #1e293b;
+	--color-neutral-900: #0f172a;
+	--color-neutral-950: #020617;
+
+	/* Optional semantic aliases (handy for components) */
+	--color-background: var(--color-neutral-50);
+	--color-foreground: var(--color-neutral-900);
+
+	--color-primary: var(--color-primary-600);
+	--color-neutral: var(--color-neutral-700);
+}
+
+/* @theme .dark {
+	--color-background: var(--color-neutral-900);
+	--color-foreground: var(--color-neutral-50);
+
+	--color-primary: var(--color-primary-500);
+	--color-neutral: var(--color-neutral-200);
+} */
+
+.flex-nowrap {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	overflow-x: auto;
+}
+
+.flex-nowrap::-webkit-scrollbar {
+	display: none;
+}
+
+@media (max-width: 1024px) {
+	.flex-nowrap {
+		-webkit-overflow-scrolling: touch;
+		scroll-behavior: smooth;
+	}
+}
