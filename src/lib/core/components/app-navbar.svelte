@@ -26,8 +26,7 @@
 	let pageMenus = [
 		{ id: 'home', title: 'Home', url: '/', isExternal: false },
 		{ id: 'about', title: 'About', url: '/about', isExternal: false },
-		{ id: 'service', title: 'Services', url: '/service', isExternal: false },
-		{ id: 'sample', title: 'Samples', url: '/sample', isExternal: false },
+		{ id: 'colleges', title: 'Colleges', url: '/colleges', isExternal: false },
 		{ id: 'contact', title: 'Contact', url: '/contact', isExternal: false }
 	];
 
@@ -94,15 +93,6 @@
 				className="p-2! text-black! "
 				iconClassName="!h-6 !w-6"
 			/>
-		{:else}
-			<div>
-				<Button
-					appearance="primary"
-					iconPath={mdiPhone}
-					label="+919958587328"
-					className="rounded-full px-8 font-bold"
-				/>
-			</div>
 		{/if}
 	</div>
 {/snippet}
@@ -238,28 +228,4 @@
 		animation: slide-in 0.3s ease-out;
 	} */
 
-	:global(.navbar-logo-divider) {
-		position: relative;
-		padding-left: 4px !important;
-		padding-right: 16px !important;
-	}
-
-	:global(.navbar-logo-divider)::after {
-		content: '';
-		position: absolute;
-		right: 0;
-		top: 50%;
-		width: 26px;
-		height: 42px;
-		transform: translateY(-50%);
-		background: linear-gradient(
-			90deg,
-			transparent 0,
-			transparent 7px,
-			rgba(148, 163, 184, 0.8) 7px,
-			rgba(148, 163, 184, 0.8) 9px,
-			transparent 9px,
-			transparent 100%
-		);
-	}
 </style>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Icon } from '@cloudparker/moldex.js';
-	import { mdiEmailOutline, mdiFacebook, mdiInstagram, mdiLinkedin, mdiPhone, mdiTwitter, mdiYoutube } from '../service/app-icons-service';
+	import { mdiEmailOutline, mdiFacebook, mdiInstagram, mdiLinkedin, mdiPhone, mdiTwitter, mdiYoutube } from '../services/app-icons-service';
 
 	const socialLinks = [
 		{ href: 'https://www.facebook.com/HelloCallai', icon: mdiFacebook, label: 'Facebook' },

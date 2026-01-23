@@ -10,7 +10,7 @@
 <div class="min-h-full">
 	<AppNavbar hasLogo hasTitle hasSubtitle/>
     <div class="text-center p-6 text-primary-600">
-        <h1>Home landing page</h1>
+        <h1>colleges page</h1>
     </div>
 
     <div>
