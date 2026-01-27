@@ -12,73 +12,85 @@
 	const courses = [
 		{
 			title: 'MBBS',
-			description: 'Medical degree focused on clinical training and patient care.',
+			description:
+				'Comprehensive medical program covering anatomy, diagnostics, and clinical rotations. Ideal for students committed to patient care and hospital practice.',
 			image: '/images/mbbs-image.jpg',
 			icon: mdiBookOpenVariantOutline
 		},
 		{
 			title: 'DDS',
-			description: 'Dental surgery foundation with strong clinical exposure.',
+			description:
+				'Dental surgery pathway focused on oral health, procedures, and clinical skill development. Builds a solid base for modern dentistry practice.',
 			image: '/images/dds-image.jpg',
 			icon: mdiBookmarkOutline
 		},
 		{
 			title: 'B.Tech',
-			description: 'Engineering program across core and emerging technologies.',
+			description:
+				'Engineering degree covering core disciplines with exposure to new-age technologies. Prepares students for industry roles and higher studies.',
 			image: '/images/btech-image.jpg',
 			icon: mdiBookVariant
 		},
 		{
 			title: 'M.Tech',
-			description: 'Advanced specialization to deepen engineering expertise.',
+			description:
+				'Advanced engineering specialization with research and project-driven learning. Ideal for students aiming for deeper expertise or academia.',
 			image: '/images/mtech-image.jpg',
 			icon: mdiBookshelf
 		},
 		{
 			title: 'MBA',
-			description: 'Leadership, strategy, and business management skills.',
+			description:
+				'Business leadership program focused on strategy, finance, and operations. Helps students build managerial skills and industry exposure.',
 			image: '/images/mba-image.jpg',
 			icon: mdiBookAccountOutline
 		},
 		{
 			title: 'MCA',
-			description: 'Computer applications with software development focus.',
+			description:
+				'Computer applications program with a strong software development focus. Covers programming, systems, and modern web technologies.',
 			image: '/images/mca-image.jpg',
 			icon: mdiBookOpenVariantOutline
 		},
 		{
 			title: 'MSc',
-			description: 'Postgraduate science programs for research and industry.',
+			description:
+				'Postgraduate science course with specialization in key disciplines. Balances research skills with practical industry applications.',
 			image: '/images/msc-image.jpg',
 			icon: mdiBookshelf
 		},
 		{
 			title: 'BBA',
-			description: 'Undergraduate business administration and entrepreneurship.',
+			description:
+				'Undergraduate business program covering marketing, finance, and entrepreneurship. Builds a strong base for corporate careers.',
 			image: '/images/bba-image.jpg',
 			icon: mdiBookAccountOutline
 		},
 		{
 			title: 'BCA',
-			description: 'Foundations in computer applications and programming.',
+			description:
+				'Undergraduate computing course with programming and software foundations. Great for students targeting tech roles and MCA.',
 			image: '/images/bca-image.jpg',
 			icon: mdiBookOpenVariantOutline
 		},
 		{
 			title: 'B.Sc Agriculture',
-			description: 'Agronomy, crop science, and rural innovation pathways.',
+			description:
+				'Focused on agronomy, crop science, and sustainable farming systems. Opens pathways in agribusiness and rural innovation.',
 			image: '/images/bsc-agri-image.jpg',
 			icon: mdiBookshelf
 		},
 		{
 			title: 'B.Pharm',
-			description: 'Pharmacy, drug development, and clinical practice.',
+			description:
+				'Pharmacy program covering drug formulation, pharmacology, and clinical practice. Suits students interested in healthcare and research.',
 			image: '/images/bpharm-image.jpg',
 			icon: mdiBookmarkOutline
 		},
 		{
 			title: 'BDS',
-			description: 'Dental surgery with patient-focused clinical training.',
+			description:
+				'Dental surgery course with patient-focused clinical training. Includes diagnostics, procedures, and oral healthcare fundamentals.',
 			image: '/images/bds-image.jpg',
 			icon: mdiBookOpenVariantOutline
 		}
@@ -128,12 +140,12 @@
 					{/each}
 				</div>
 		</div>
-		<div class="space-y-6">
+		<div class="space-y-6! mt-12">
 				<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 					{#each courses as course}
 						<article
 							data-animate
-							class="group overflow-hidden rounded-3xl border border-white/80 bg-white/90 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-xl hover:shadow-primary-100/60"
+							class="group flex h-full flex-col overflow-hidden rounded-3xl border border-white/80 bg-white/90 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-xl hover:shadow-primary-100/60"
 						>
 							<div class="relative h-40 overflow-hidden">
 								<img
@@ -149,9 +161,9 @@
 									<Icon path={course.icon} className="h-4 w-4" />
 								</span>
 							</div>
-							<div class="space-y-2 p-4">
-								<p class="text-sm font-semibold text-neutral-900">{course.title}</p>
-								<p class="text-xs text-neutral-600">{course.description}</p>
+							<div class="flex grow flex-col gap-2 p-4">
+								<p class="text-base font-semibold text-neutral-900">{course.title}</p>
+								<p class="text-sm leading-relaxed text-neutral-600">{course.description}</p>
 							</div>
 						</article>
 					{/each}
