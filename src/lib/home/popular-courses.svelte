@@ -14,8 +14,6 @@
 		'B.Sc Agriculture',
 		'B.Pharm',
 		'BDS',
-		'B.Com',
-		'B.Ed'
 	];
 
 	const tracks = [
