@@ -254,13 +254,10 @@
 			</div>
 		</div>
 
-		<div
-			class="relative z-10 mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
-			use:scrollReveal={{ start: 'top 85%', stagger: 0.12, y: 24, selector: '.highlight-card' }}
-		>
+		<div class="relative z-10 mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 			{#each highlights as highlight}
 				<div
-					class="highlight-card group rounded-2xl border border-primary-100/80 bg-gradient-to-br from-white via-primary-50/60 to-indigo-50/40 p-6 text-sm text-slate-800 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+					class="group rounded-2xl border border-primary-100/80 bg-gradient-to-br from-white via-primary-50/60 to-indigo-50/40 p-6 text-sm text-slate-800 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
 				>
 					<span
 						class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-white text-primary-600 shadow-sm transition group-hover:scale-105"
