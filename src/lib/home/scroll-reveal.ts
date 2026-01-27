@@ -25,8 +25,16 @@ const loadGsap = async () => {
 	if (!gsapPromise) {
 		gsapPromise = Promise.all([import('gsap'), import('gsap/ScrollTrigger')]).then(
 			([gsapModule, scrollTriggerModule]) => {
-				const gsap = gsapModule.default;
-				const ScrollTrigger = scrollTriggerModule.ScrollTrigger;
+				const gsap =
+					(gsapModule as typeof gsapModule & { gsap?: GsapBundle['gsap'] }).gsap ??
+					gsapModule.default ??
+					(gsapModule as GsapBundle['gsap']);
+				const ScrollTrigger =
+					(scrollTriggerModule as typeof scrollTriggerModule & {
+						ScrollTrigger?: GsapBundle['ScrollTrigger'];
+					}).ScrollTrigger ??
+					scrollTriggerModule.default ??
+					(scrollTriggerModule as GsapBundle['ScrollTrigger']);
 				gsap.registerPlugin(ScrollTrigger);
 				return { gsap, ScrollTrigger };
 			}
@@ -49,23 +57,48 @@ export function scrollReveal(
 		const { gsap, ScrollTrigger } = await loadGsap();
 		if (destroyed) return;
 
-		const targets = node.querySelectorAll(params.selector ?? '[data-animate]');
+		const targets = Array.from(node.querySelectorAll(params.selector ?? '[data-animate]'));
 		if (!targets.length) return;
 
+		let hasAnimated = false;
+
 		const ctx = gsap.context(() => {
-			gsap.from(targets, {
-				opacity: 0,
-				y: params.y ?? 24,
-				duration: params.duration ?? 0.85,
-				stagger: params.stagger ?? 0.12,
-				delay: params.delay ?? 0,
-				ease: params.ease ?? 'power3.out',
-				scrollTrigger: {
-					trigger: node,
-					start: params.start ?? 'top 80%',
-					once: params.once ?? true
+			const runAnimation = () => {
+				if (hasAnimated && (params.once ?? true)) return;
+				hasAnimated = true;
+
+				gsap.fromTo(
+					targets,
+					{
+						opacity: 0,
+						y: params.y ?? 24
+					},
+					{
+						opacity: 1,
+						y: 0,
+						duration: params.duration ?? 0.85,
+						stagger: params.stagger ?? 0.12,
+						delay: params.delay ?? 0,
+						ease: params.ease ?? 'power3.out',
+						immediateRender: false,
+						clearProps: 'transform,opacity'
+					}
+				);
+			};
+
+			const trigger = ScrollTrigger.create({
+				trigger: node,
+				start: params.start ?? 'top 80%',
+				once: params.once ?? true,
+				onEnter: runAnimation,
+				onEnterBack: () => {
+					if (!(params.once ?? true)) runAnimation();
 				}
 			});
+
+			if (trigger.isActive) {
+				runAnimation();
+			}
 		}, node);
 
 		cleanup = () => ctx.revert();
