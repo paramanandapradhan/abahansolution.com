@@ -145,16 +145,16 @@
 					{#each courses as course}
 						<article
 							data-animate
-							class="group flex h-full flex-col overflow-hidden rounded-3xl border border-white/80 bg-white/90 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-xl hover:shadow-primary-100/60"
+							class="group flex min-h-[22rem] flex-col overflow-hidden rounded-3xl border border-white/80 bg-white/90 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-xl hover:shadow-primary-100/60 sm:min-h-[24rem] lg:min-h-[26rem]"
 						>
-							<div class="relative h-40 overflow-hidden">
+							<div class="relative aspect-[4/3] overflow-hidden bg-neutral-50 sm:aspect-[5/3] lg:aspect-[16/9]">
 								<img
 									src={course.image}
 									alt={`${course.title} course`}
 									class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
 									loading="lazy"
 								/>
-								<div class="absolute inset-0 bg-gradient-to-t from-slate-900/45 via-slate-900/5 to-transparent"></div>
+								<div class="absolute inset-0 bg-gradient-to-t from-slate-900/25 via-slate-900/0 to-transparent"></div>
 								<span
 									class="absolute left-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-primary-600 shadow-sm transition duration-300 group-hover:scale-110"
 								>
