@@ -36,15 +36,14 @@
 		{ id: 'contact', title: 'Contact', url: '/contact', isExternal: false }
 	];
 
-	let activeMenu = $state('home');
+	const getActiveMenuId = (pathname: string) =>
+		pageMenus.find((menu) => menu.url === pathname)?.id ?? 'home';
+
+	let activeMenu = $state(getActiveMenuId(page.url.pathname));
 	let isMobileMenuOpen = $state(false);
 
 	$effect(() => {
-		let currentPath = page.url.pathname;
-		let active = pageMenus.find((menu) => menu.url === currentPath);
-		if (active) {
-			activeMenu = active.id;
-		}
+		activeMenu = getActiveMenuId(page.url.pathname);
 	});
 
 	async function handlePageNavigation(ev: any, menu: any) {
