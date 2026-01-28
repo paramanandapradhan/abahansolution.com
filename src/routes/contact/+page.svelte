@@ -2,21 +2,19 @@
 	import AppNavbar from "$lib/core/components/app-navbar.svelte";
 	import CopyRights from "$lib/core/components/copy-rights.svelte";
 	import Footer from "$lib/core/components/footer.svelte";
-
+	import ContactForm from "$lib/contact/contact-form.svelte";
+	import ContactHero from "$lib/contact/contact-hero.svelte";
+	import ContactMap from "$lib/contact/contact-map.svelte";
 
 </script>
 
-
-<div class="min-h-full">
-	<AppNavbar hasLogo hasTitle hasSubtitle/>
-    <div class="text-center p-6 text-primary-600">
-        <h1>Contact page</h1>
-    </div>
-
-    <div>
-		<Footer />
-	</div>
-	<div>
-		<CopyRights />
-	</div>
+<div class="min-h-full bg-white text-neutral-900">
+	<AppNavbar hasLogo hasTitle hasSubtitle />
+	<main>
+		<ContactHero />
+		<ContactForm />
+		<ContactMap />
+	</main>
+	<Footer />
+	<CopyRights />
 </div>
