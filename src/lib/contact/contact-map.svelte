@@ -4,8 +4,7 @@
 
 <section class="relative overflow-hidden bg-gradient-to-b from-white via-slate-50/70 to-white">
 	<div
-		class="relative mx-auto max-w-7xl px-4 py-12 sm:py-16 lg:px-8"
-		use:scrollReveal={{ start: 'top 85%', stagger: 0.12, y: 24 }}
+		class="relative mx-auto max-w-7xl px-4 py-12 sm:py-16 lg:px-8"	
 	>
 		<div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
 			<div class="max-w-xl space-y-4">
@@ -20,7 +19,7 @@
 				</h2>
 			</div>
 			<p data-animate class="max-w-md text-sm text-slate-600">
-				Visit us or connect online. We are located in the heart of Odisha’s education hub.
+				Visit us or connect online. We are located in the heart of Odishaï¿½s education hub.
 			</p>
 		</div>
 
