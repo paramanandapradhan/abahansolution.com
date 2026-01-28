@@ -70,25 +70,29 @@ export function scrollReveal(
 				gsap.fromTo(
 					targets,
 					{
-						opacity: 0,
-						y: params.y ?? 24
+						autoAlpha: 0,
+						y: params.y ?? 36,
+						scale: 0.98,
+						filter: 'blur(4px)'
 					},
 					{
-						opacity: 1,
+						autoAlpha: 1,
 						y: 0,
-						duration: params.duration ?? 0.85,
-						stagger: params.stagger ?? 0.12,
+						scale: 1,
+						filter: 'blur(0px)',
+						duration: params.duration ?? 1.1,
+						stagger: params.stagger ?? 0.18,
 						delay: params.delay ?? 0,
 						ease: params.ease ?? 'power3.out',
 						immediateRender: false,
-						clearProps: 'transform,opacity'
+						clearProps: 'transform,filter,opacity'
 					}
 				);
 			};
 
 			const trigger = ScrollTrigger.create({
 				trigger: node,
-				start: params.start ?? 'top 80%',
+				start: params.start ?? 'top 90%',
 				once: params.once ?? true,
 				onEnter: runAnimation,
 				onEnterBack: () => {
