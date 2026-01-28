@@ -1,12 +1,8 @@
-<script lang="ts">
-	export type CollegeItem = {
-		name: string;
-		shortName: string;
-		description: string;
-		images: [string, string];
-	};
 
-	export let college: CollegeItem;
+<script lang="ts">
+	import type { CollegeItem } from "./colleges-types";
+
+	let { college } = $props<{ college: CollegeItem }>();
 </script>
 
 <article

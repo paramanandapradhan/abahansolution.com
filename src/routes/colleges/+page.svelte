@@ -2,10 +2,11 @@
 	import AppNavbar from '$lib/core/components/app-navbar.svelte';
 	import CopyRights from '$lib/core/components/copy-rights.svelte';
 	import Footer from '$lib/core/components/footer.svelte';
-	import CollegeShowcase, { type CollegeItem } from '$lib/colleges/college-showcase.svelte';
+	import CollegeShowcase from '$lib/colleges/college-showcase.svelte';
 	import { scrollReveal } from '$lib/home/scroll-reveal';
+	import type { CollegeItem } from '$lib/colleges/colleges-types';
 
-	const colleges: CollegeItem[] = [
+	let colleges = $state<CollegeItem[]>([
 		{
 			shortName: 'ITER',
 			name: 'ITER (Institute of Technical Education and Research)',
@@ -104,7 +105,7 @@
 				"Centurion University of Technology and Management (CUTM), with campuses in Bhubaneswar and Paralakhemundi, Odisha, is a leading private university known for its skill-based, industry-aligned education and 100% placement opportunities. Offering programs in engineering, agriculture, fisheries, management, and more (with ICAR accreditation for select schools), it stands as the only technological university in South Odisha. Focused on innovation, vocational training, research, and practical learning, Centurion empowers students with real-world skills for successful professional futures.",
 			images: ['/images/centurion-college-image1.jpeg', '/images/centurion-college-image2.jpeg']
 		}
-	];
+	]);
 </script>
 
 <div class="min-h-full bg-white">
