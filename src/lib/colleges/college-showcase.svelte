@@ -6,6 +6,7 @@
 </script>
 
 <article
+	id={college.id}
 	data-animate
 	class="group relative overflow-hidden rounded-3xl border border-white/80 bg-white/90 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-xl hover:shadow-primary-100/60"
 >
@@ -15,7 +16,7 @@
 				<img
 					src={image}
 					alt={`${college.shortName} campus view ${index + 1}`}
-					class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+					class="h-full w-full object-cover"
 					loading="lazy"
 				/>
 				<div class="absolute inset-0 bg-gradient-to-t from-slate-900/35 via-slate-900/0 to-transparent"></div>

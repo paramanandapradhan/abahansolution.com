@@ -8,6 +8,7 @@
 
 	let colleges = $state<CollegeItem[]>([
 		{
+			id: 'iter',
 			shortName: 'ITER',
 			name: 'ITER (Institute of Technical Education and Research)',
 			description:
@@ -15,6 +16,7 @@
 			images: ['/images/iter-college-image1.webp', '/images/iter-college-image2.webp']
 		},
 		{
+			id: 'kiit',
 			shortName: 'KIIT',
 			name: 'KIIT (Kalinga Institute of Industrial Technology)',
 			description:
@@ -22,6 +24,7 @@
 			images: ['/images/kiit-college-image1.avif', '/images/kiit-college-image2.jpg']
 		},
 		{
+			id: 'cgu',
 			shortName: 'CGU',
 			name: 'CGU (C.V. Raman Global University)',
 			description:
@@ -29,6 +32,7 @@
 			images: ['/images/cgu-college-image1.jpg', '/images/cgu-college-image2.jpeg']
 		},
 		{
+			id: 'gita',
 			shortName: 'GITA',
 			name: 'GITA (Gandhi Institute for Technological Advancement)',
 			description:
@@ -36,6 +40,7 @@
 			images: ['/images/gita-college-image1.avif', '/images/gita-college-image2.png']
 		},
 		{
+			id: 'gec',
 			shortName: 'GEC',
 			name: 'GEC (Gandhi Engineering College)',
 			description:
@@ -43,6 +48,7 @@
 			images: ['/images/gec-college-image1.webp', '/images/gec-college-image2.jpg']
 		},
 		{
+			id: 'trident',
 			shortName: 'Trident',
 			name: 'Trident Academy of Technology',
 			description:
@@ -50,6 +56,7 @@
 			images: ['/images/trident-college-image1.png', '/images/trident-college-image2.jpeg']
 		},
 		{
+			id: 'driems',
 			shortName: 'DRIEMS',
 			name: 'DRIEMS University',
 			description:
@@ -57,6 +64,7 @@
 			images: ['/images/driems-college-image1.jpg', '/images/driems-college-image2.jpg']
 		},
 		{
+			id: 'sri-sri',
 			shortName: 'Sri Sri',
 			name: 'Sri Sri University',
 			description:
@@ -64,6 +72,7 @@
 			images: ['/images/sri-college-image1.jpg', '/images/sri-college-image2.jpeg']
 		},
 		{
+			id: 'giet',
 			shortName: 'GIET',
 			name: 'GIET, Baniatangi (Gandhi Institute for Education and Technology)',
 			description:
@@ -71,6 +80,7 @@
 			images: ['/images/giet-college-image1.jpeg', '/images/giet-college-image2.jpg']
 		},
 		{
+			id: 'nist',
 			shortName: 'NIST',
 			name: 'NIST Berhampur (National Institute of Science and Technology)',
 			description:
@@ -78,6 +88,7 @@
 			images: ['/images/nist-college-image1.jpeg', '/images/nist-college-image2.jpeg']
 		},
 		{
+			id: 'kist',
 			shortName: 'KIST',
 			name: 'KIST (Konark Institute of Science and Technology)',
 			description:
@@ -85,6 +96,7 @@
 			images: ['/images/kist-college-image1.jpg', '/images/kist-college-image2.jpeg']
 		},
 		{
+			id: 'nit',
 			shortName: 'NIT',
 			name: 'NIT (Nalanda Institute of Technology)',
 			description:
@@ -92,6 +104,7 @@
 			images: ['/images/nit-college-image1.jpeg', '/images/nit-college-image2.jpeg']
 		},
 		{
+			id: 'dadhichi',
 			shortName: 'Dadhichi',
 			name: 'Dadhichi Group of Institutions',
 			description:
@@ -99,6 +112,7 @@
 			images: ['/images/dadhichi-college-image1.jpg', '/images/dadhichi-college-image2.png']
 		},
 		{
+			id: 'centurion',
 			shortName: 'CUTM',
 			name: 'Centurion University',
 			description:
