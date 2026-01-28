@@ -2,28 +2,90 @@
 	import { scrollReveal } from '$lib/home/scroll-reveal';
 
 	const colleges = [
-		'ITER',
-		'KIIT',
-		'CGU',
-		'GITA',
-		'GEC',
-		'Trident Academy of Technology',
-		'DRIEMS',
-		'Sri Sri University',
-		'GIET, Baniatangi',
-		'NIST Berhampur',
-		'KIST',
-		'NIT (Nalanda)',
-		'Dadhichi Group of Institutions',
-		'Centurion University'
-	];
-
-	const quickLinks = [
-		{ label: 'About Us', href: '/about' },
-		{ label: 'Colleges', href: '/colleges' },
-		{ label: 'Contact', href: '/contact' },
-		{ label: 'Privacy Policy', href: '/privacy' },
-		{ label: 'Terms & Conditions', href: '/term' }
+		{
+			name: 'ITER (SOA University)',
+			description:
+				'Leading deemed university in Bhubaneswar known for engineering and research excellence with modern, innovation-driven programs.',
+			image: '/images/iter-college-image1.webp'
+		},
+		{
+			name: 'KIIT University',
+			description:
+				'Prestigious private deemed university with diverse programs from B.Tech to MBBS and strong placement outcomes.',
+			image: '/images/kiit-college-image1.avif'
+		},
+		{
+			name: 'C.V. Raman Global University (CGU)',
+			description:
+				'Multidisciplinary university delivering industry-focused engineering and management education with modern facilities.',
+			image: '/images/cgu-college-image1.jpg'
+		},
+		{
+			name: 'GITA (Gandhi Institute for Technological Advancement)',
+			description:
+				'Autonomous college offering B.Tech, M.Tech, MBA, and MCA with strong academic discipline and placements.',
+			image: '/images/gita-college-image1.avif'
+		},
+		{
+			name: 'Gandhi Engineering College (GEC)',
+			description:
+				'NAAC A-grade campus known for holistic technical and management education and industry-ready training.',
+			image: '/images/gec-college-image1.webp'
+		},
+		{
+			name: 'Trident Academy of Technology',
+			description:
+				'Respected technical institution with strong programs in CS, electronics, biotech, and civil engineering.',
+			image: '/images/trident-college-image1.png'
+		},
+		{
+			name: 'DRIEMS University',
+			description:
+				'Private university offering 50+ courses across engineering, health sciences, and management with a research focus.',
+			image: '/images/driems-college-image1.jpg'
+		},
+		{
+			name: 'Sri Sri University',
+			description:
+				'Holistic private university blending Eastern wisdom with modern education in a serene, innovation-led campus.',
+			image: '/images/sri-college-image1.jpg'
+		},
+		{
+			name: 'GIET, Baniatangi',
+			description:
+				'Fast-growing technical institute focused on B.Tech and M.Tech programs with strong industry relevance.',
+			image: '/images/giet-college-image1.jpeg'
+		},
+		{
+			name: 'NIST University, Berhampur',
+			description:
+				'Premier institute known for research excellence, innovation, and strong industry connections in Odisha.',
+			image: '/images/nist-college-image1.jpeg'
+		},
+		{
+			name: 'KIST, Bhubaneswar',
+			description:
+				'AICTE-approved engineering college delivering disciplined learning, modern facilities, and career focus.',
+			image: '/images/kist-college-image1.jpg'
+		},
+		{
+			name: 'Nalanda Institute of Technology (NIT)',
+			description:
+				'Premier private engineering institute emphasizing academic excellence and future-ready technical education.',
+			image: '/images/nit-college-image1.jpeg'
+		},
+		{
+			name: 'Dadhichi Group of Institutions',
+			description:
+				'Pharmacy-focused institutions promoting excellence, integrity, and holistic student development in Odisha.',
+			image: '/images/dadhichi-college-image1.jpg'
+		},
+		{
+			name: 'Centurion University (CUTM)',
+			description:
+				'Skill-based private university with strong placement focus and programs across engineering and applied sciences.',
+			image: '/images/centurion-college-image1.jpeg'
+		}
 	];
 </script>
 
@@ -38,77 +100,54 @@
 	></div>
 
 	<div class="relative mx-auto max-w-7xl px-4 py-12 sm:py-16 lg:px-8" use:scrollReveal>
-		<div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-			<div>
+		<div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+			<div class="max-w-2xl space-y-4">
 				<p
 					data-animate
 					class="inline-flex items-center gap-2 rounded-full border border-primary-200/70 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-primary-600 shadow-sm"
 				>
 					Featured colleges
 				</p>
-				<h2 data-animate class="mt-4 font-[var(--font-display)] text-3xl text-neutral-900 sm:text-4xl">
+				<h2 data-animate class="font-[var(--font-display)] text-3xl text-neutral-900 sm:text-4xl">
 					Trusted campuses we work with.
 				</h2>
-				<p data-animate class="mt-3 text-sm text-neutral-600">
-					We partner with reputed colleges across Odisha and beyond to match students with the right program.
+				<p data-animate class="text-sm text-neutral-600">
+					Discover Odisha's top colleges with verified programs, modern facilities, and strong placement support.
 				</p>
-
-				<div class="mt-8 grid gap-4 sm:grid-cols-2">
-					{#each colleges as college, index}
-						<div
-							data-animate
-							class="flex items-center gap-3 rounded-2xl border border-white/80 bg-white/80 px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:border-primary-200 hover:shadow-md"
-						>
-							<span
-								class="flex h-9 w-9 items-center justify-center rounded-full bg-primary-50 text-xs font-semibold text-primary-600"
-							>
-								{index + 1}
-							</span>
-							<span class="text-sm font-semibold text-neutral-800">{college}</span>
-						</div>
-					{/each}
-				</div>
-				<p data-animate class="mt-6 text-sm text-neutral-600">And many more colleges across India.</p>
 			</div>
+			<a
+				data-animate
+				href="/colleges"
+				class="inline-flex items-center justify-center rounded-full bg-primary-600 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-primary-700"
+			>
+				Read more
+			</a>
+		</div>
 
-			<div class="space-y-6">
-				<div
+		<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			{#each colleges as college}
+				<article
 					data-animate
-					class="rounded-3xl border border-white/80 bg-white/80 p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+					class="group flex h-full flex-col overflow-hidden rounded-3xl border border-white/80 bg-white/90 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-xl hover:shadow-primary-100/60"
 				>
-					<h3 class="font-[var(--font-display)] text-xl text-neutral-900">Quick links</h3>
-					<ul class="mt-4 space-y-3">
-						{#each quickLinks as link}
-							<li>
-								<a
-									href={link.href}
-									class="group flex items-center justify-between text-sm font-semibold text-neutral-700 transition hover:text-primary-700"
-								>
-									<span>{link.label}</span>
-									<span class="text-xs text-neutral-400 transition group-hover:text-primary-600">Explore</span>
-								</a>
-							</li>
-						{/each}
-					</ul>
-				</div>
-
-				<div
-					data-animate
-					class="rounded-3xl border border-primary-200/70 bg-linear-to-br from-white via-primary-50/60 to-emerald-50/60 p-6 shadow-lg"
-				>
-					<p class="text-xs font-semibold uppercase tracking-[0.3em] text-primary-600">Need a shortlist?</p>
-					<p class="mt-3 text-lg font-semibold text-neutral-900">Get a custom list in 24 hours.</p>
-					<p class="mt-3 text-sm text-neutral-600">
-						Share your scores and preferences. We will send a curated list and eligibility guidance.
-					</p>
-					<a
-						href="/contact"
-						class="mt-5 inline-flex items-center justify-center rounded-full bg-primary-600 px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-primary-700"
-					>
-						Request shortlist
-					</a>
-				</div>
-			</div>
+					<div class="relative aspect-[4/3] overflow-hidden bg-slate-100">
+						<img
+							src={college.image}
+							alt={`${college.name} campus`}
+							class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+							loading="lazy"
+						/>
+						<div class="absolute inset-0 bg-gradient-to-t from-slate-900/45 via-slate-900/10 to-transparent"></div>
+					</div>
+					<div class="flex flex-1 flex-col gap-3 p-5">
+						<h3 class="font-[var(--font-display)] text-lg text-slate-900">{college.name}</h3>
+						<p class="text-sm text-slate-600">{college.description}</p>
+						<span class="mt-auto text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-primary-600">
+							View on colleges page
+						</span>
+					</div>
+				</article>
+			{/each}
 		</div>
 	</div>
 </section>
