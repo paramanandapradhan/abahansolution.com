@@ -12,12 +12,12 @@
 		disabledLogo,
 		logoImgSrc = '/icons/web/icon-512.png',
 		logoImgClassName =
-			'!h-10 !w-10 sm:!h-12 sm:!w-12 !object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-105 group-hover:rotate-1',
+			'!h-10 !w-10  !object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-105 group-hover:rotate-1',
 		className = '!h-18 !mx-auto !w-full max-w-7xl px-4 md:px-10 lg:px-16 bg-white!',
-		hasLogo,
-		hasTitle,
+		hasLogo = true,
+		hasTitle = true,
 		titleClassName =
-			'!text-primary-600 dark:!text-slate-100 !font-semibold !text-2xl sm:!text-3xl !leading-tight !text-capitalize !px-0 !tracking-tight',
+			'!text-primary-600 dark:!text-slate-100 !font-semibold !text-2xl sm:!text-3xl !leading-tight !px-0 !tracking-tight !uppercase',
 		title = 'Abahan Solutions',
 		hasSubtitle,
 		subtitle = '',

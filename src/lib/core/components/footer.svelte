@@ -62,10 +62,10 @@
 				<div class="flex items-center gap-3">
 					<a
 						href="/"
-						class="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-600 text-sm font-black text-white shadow-lg shadow-primary-200/70 transition hover:-translate-y-0.5"
+						
 						aria-label="Abahan Solutions"
 					>
-						AS
+						<img src="/icons/web/icon-512.png" alt="Abahan Solutions Logo" class="h-10 w-10 object-contain drop-shadow-md" />
 					</a>
 					<div>
 						<p class="text-[0.6rem] font-semibold uppercase tracking-[0.45em] text-primary-500">
