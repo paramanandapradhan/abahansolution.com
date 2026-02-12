@@ -10,7 +10,7 @@
 	let {
 		hasBack,
 		disabledLogo,
-		logoImgSrc = '',
+		logoImgSrc = '/icons/web/icon-512.png',
 		logoImgClassName =
 			'!h-10 !w-10 sm:!h-12 sm:!w-12 !object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-105 group-hover:rotate-1',
 		logoButtonClassName =
