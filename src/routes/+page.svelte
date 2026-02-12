@@ -6,6 +6,7 @@
 	import FooterCta from "$lib/home/footer-cta.svelte";
 	import HeroSection from "$lib/home/hero-section.svelte";
 	import HowItWorks from "$lib/home/how-it-works.svelte";
+	import ApplicationForm from "$lib/form/application-form.svelte";
 	import PopularCourses from "$lib/home/popular-courses.svelte";
 	import Testimonials from "$lib/home/testimonials.svelte";
 	import WhyChooseUs from "$lib/home/why-choose-us.svelte";
@@ -20,6 +21,7 @@
 		<WhyChooseUs />
 		<PopularCourses />
 		<HowItWorks />
+		<ApplicationForm />
 		<Testimonials />
 		<FeaturedColleges />
 		<FooterCta />
