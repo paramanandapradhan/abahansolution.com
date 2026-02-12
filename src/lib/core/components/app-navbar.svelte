@@ -13,13 +13,11 @@
 		logoImgSrc = '/icons/web/icon-512.png',
 		logoImgClassName =
 			'!h-10 !w-10 sm:!h-12 sm:!w-12 !object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-105 group-hover:rotate-1',
-		logoButtonClassName =
-			'group !rounded-full bg-white/70 dark:bg-slate-900/60 border border-slate-200/70 dark:border-slate-700/70 shadow-sm shadow-slate-900/5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-900/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-950',
 		className = '!h-18 !mx-auto !w-full max-w-7xl px-4 md:px-10 lg:px-16 bg-white!',
 		hasLogo,
 		hasTitle,
 		titleClassName =
-			'!text-primary-600 dark:!text-slate-100 !font-semibold !text-2xl sm:!text-3xl !leading-tight !px-0 !tracking-tight',
+			'!text-primary-600 dark:!text-slate-100 !font-semibold !text-2xl sm:!text-3xl !leading-tight !text-capitalize !px-0 !tracking-tight',
 		title = 'Abahan Solutions',
 		hasSubtitle,
 		subtitle = '',
@@ -189,7 +187,6 @@
 		hasLogo={showLogo}
 		{logoImgSrc}
 		{logoImgClassName}
-		{logoButtonClassName}
 		{hasTitle}
 		{title}
 		{titleClassName}
