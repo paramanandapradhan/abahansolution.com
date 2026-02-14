@@ -2,7 +2,7 @@
 	import AppNavbar from "$lib/core/components/app-navbar.svelte";
 	import CopyRights from "$lib/core/components/copy-rights.svelte";
 	import Footer from "$lib/core/components/footer.svelte";
-	import ContactForm from "$lib/contact/contact-form.svelte";
+	import ApplicationForm from "$lib/form/application-form.svelte";
 	import ContactHero from "$lib/contact/contact-hero.svelte";
 	import ContactMap from "$lib/contact/contact-map.svelte";
 
@@ -12,7 +12,7 @@
 	<AppNavbar hasLogo hasTitle hasSubtitle />
 	<main>
 		<ContactHero />
-		<ContactForm />
+		<ApplicationForm />
 		<ContactMap />
 	</main>
 	<Footer />

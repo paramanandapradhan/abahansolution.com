@@ -180,7 +180,7 @@
   </div>
 {/if} -->
 
-<div class="sticky top-0 z-30 w-full bg-white/70 backdrop-blur-xl border-b border-slate-200/70 shadow-[0_16px_40px_rgba(15,23,42,0.08)] dark:bg-slate-950/70 dark:border-slate-800/70">
+<div class="sticky top-0 z-30 w-full bg-white backdrop-blur-xl border-b border-slate-200/70 shadow-[0_16px_40px_rgba(15,23,42,0.08)] dark:bg-slate-950/70 dark:border-slate-800/70">
 	<Navbar
 		{hasBack}
 		className={`${className} static! border-0! shadow-none! bg-transparent! dark:bg-transparent!`}

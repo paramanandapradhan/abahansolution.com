@@ -7,6 +7,7 @@
 		branch: string;
 		phone: string;
 		email: string;
+		message: string;
 	};
 
 	const courseOptions = ['B.Tech', 'B.Sc', 'BBA', 'BCA', 'MBA', 'MCA', 'MBBS'];
@@ -26,15 +27,69 @@
 		course: '',
 		branch: '',
 		phone: '',
-		email: ''
+		email: '',
+		message: ''
 	});
 
 	let status = $state('');
 
-	const handleSubmit = (event: SubmitEvent) => {
-		event.preventDefault();
-		status = 'Application received! Our counsellor will call within 24 hours.';
+	type ToastOptions = {
+		msg: string;
 	};
+
+	const showToast = ({ msg }: ToastOptions) => {
+		status = msg;
+	};
+
+	async function handleSubmit(event: SubmitEvent) {
+		event.preventDefault();
+
+		const submission = {
+			name: (form.name || '').trim(),
+			course: (form.course || '').trim(),
+			branch: (form.branch || '').trim(),
+			phone: (form.phone || '').trim(),
+			email: (form.email || '').trim(),
+			message: (form.message || '').trim()
+		};
+
+		if (
+			submission.name &&
+			submission.message &&
+			submission.course &&
+			submission.branch &&
+			(submission.email || submission.phone)
+		) {
+			try {
+				const response = await fetch('https://formspree.io/f/xldjdjyw', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify(submission)
+				});
+
+				if (response.ok) {
+					showToast({ msg: 'Message sent successfully!' });
+					form = {
+						name: '',
+						course: '',
+						branch: '',
+						phone: '',
+						email: '',
+						message: ''
+					};
+				} else {
+					showToast({ msg: 'Failed to send message. Please try again later.' });
+				}
+			} catch (error) {
+				console.error('Error submitting form:', error);
+				showToast({ msg: 'Something went wrong!' });
+			}
+		} else {
+			showToast({ msg: 'Missing required fields.' });
+		}
+	}
 </script>
 
 <section class="relative overflow-hidden bg-linear-to-br from-white via-slate-50 to-primary-50/60">
@@ -97,7 +152,6 @@
 								placeholder="+91 98765 43210"
 								class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 shadow-sm outline-none transition hover:border-primary-200 focus:border-primary-300 focus:ring-2 focus:ring-primary-100"
 								bind:value={form.phone}
-								required
 							/>
 						</div>
 					</div>
@@ -148,8 +202,21 @@
 							placeholder="you@example.com"
 							class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 shadow-sm outline-none transition hover:border-primary-200 focus:border-primary-300 focus:ring-2 focus:ring-primary-100"
 							bind:value={form.email}
-							required
 						/>
+					</div>
+
+					<div class="mt-4 space-y-2">
+						<label class="text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-slate-500" for="message">
+							Program or requirement
+						</label>
+						<textarea
+							id="message"
+							rows={4}
+							placeholder="Describe the specialization, scholarship need, or application support you are seeking."
+							class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 shadow-sm outline-none transition hover:border-primary-200 focus:border-primary-300 focus:ring-2 focus:ring-primary-100"
+							bind:value={form.message}
+							required
+						></textarea>
 					</div>
 
 					<div class="mt-6 flex flex-wrap items-center gap-4">
