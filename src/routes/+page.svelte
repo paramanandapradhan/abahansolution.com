@@ -5,20 +5,21 @@
 	import AppNavbar from "$lib/core/components/app-navbar.svelte";
 	import CopyRights from "$lib/core/components/copy-rights.svelte";
 	import Footer from "$lib/core/components/footer.svelte";
+	import HomeDialogApplicationForm from "$lib/form/home-dialog-application-form.svelte";
 	import FeaturedColleges from "$lib/home/featured-colleges.svelte";
 	import FooterCta from "$lib/home/footer-cta.svelte";
 	import HeroSection from "$lib/home/hero-section.svelte";
 	import HowItWorks from "$lib/home/how-it-works.svelte";
-	import ApplicationForm from "$lib/form/application-form.svelte";
 	import PopularCourses from "$lib/home/popular-courses.svelte";
 	import Testimonials from "$lib/home/testimonials.svelte";
 	import WhyChooseUs from "$lib/home/why-choose-us.svelte";
+	import ApplicationForm from "$lib/form/application-form.svelte";
 
 	const homeFormSessionKey = "home_application_dialog_seen";
-	const minDialogDelayMs = 3000;
-	const maxDialogDelayMs = 4000;
+	const minDialogDelayMs = 2000;
+	const maxDialogDelayMs = 3000;
 
-	let showApplicationDialog = false;
+	let showApplicationDialog = $state(false);
 	let openDialogTimer: ReturnType<typeof setTimeout> | undefined;
 
 	function closeApplicationDialog() {
@@ -32,7 +33,12 @@
 	}
 
 	function handleBackdropKeydown(event: KeyboardEvent) {
+		if (event.target !== event.currentTarget) {
+			return;
+		}
+
 		if (event.key === "Enter" || event.key === " ") {
+			event.preventDefault();
 			closeApplicationDialog();
 		}
 	}
@@ -59,17 +65,21 @@
 		}, delayMs);
 	});
 
-	$: if (browser) {
+	$effect(() => {
+		if (!browser) {
+			return;
+		}
+
 		document.body.classList.toggle("overflow-hidden", showApplicationDialog);
-	}
+
+		return () => {
+			document.body.classList.remove("overflow-hidden");
+		};
+	});
 
 	onDestroy(() => {
 		if (openDialogTimer) {
 			clearTimeout(openDialogTimer);
-		}
-
-		if (browser) {
-			document.body.classList.remove("overflow-hidden");
 		}
 	});
 </script>
@@ -94,7 +104,7 @@
 
 {#if showApplicationDialog}
 	<div
-		class="fixed inset-0 z-[120] flex items-center justify-center bg-slate-950/60 p-3 sm:p-6"
+		class="fixed inset-0 z-[120] grid place-items-center bg-slate-950/65 p-3 backdrop-blur-sm sm:p-6"
 		role="dialog"
 		aria-modal="true"
 		aria-label="Application form dialog"
@@ -102,16 +112,8 @@
 		onclick={handleBackdropClick}
 		onkeydown={handleBackdropKeydown}
 	>
-		<div class="relative max-h-[92vh] w-full max-w-6xl overflow-y-auto rounded-3xl shadow-2xl">
-			<button
-				type="button"
-				class="absolute right-4 top-4 z-20 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-700 shadow-lg transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300"
-				aria-label="Close form"
-				onclick={closeApplicationDialog}
-			>
-				X
-			</button>
-			<ApplicationForm />
+		<div class="w-full max-w-4xl overflow-hidden rounded-[30px]">
+			<HomeDialogApplicationForm onClose={closeApplicationDialog} />
 		</div>
 	</div>
 {/if}
