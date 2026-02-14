@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>Privacy Policy | PatentryHub</title>
+	<title>Privacy Policy | Abahan Solution</title>
 </svelte:head>
 
 <div class="">
@@ -27,7 +27,7 @@
 		<div class="m-auto w-full max-w-[800px] rounded bg-white p-4 shadow md:p-16">
 			<div class=" ">
 				<h3 class="mb-4 text-2xl font-bold text-base-800">Privacy Policy</h3>
-				<p class="mb-6 text-sm text-base-500">Last updated: 01 August 2025</p>
+				<p class="mb-6 text-sm text-base-500">Last updated: 01 January 2026</p>
 
 				<p class="mb-4 text-base-700">
 					This Privacy Policy describes Our policies and procedures on the collection, use and
@@ -58,7 +58,7 @@
 						parts of our Service.
 					</li>
 					<li>
-						<strong>Company</strong> refers to PatentryHub, Cuttack, Odisha, referred to as "We", "Us",
+						<strong>Company</strong> refers to Abahan Solution, Bhubaneswar, Odisha, referred to as "We", "Us",
 						or "Our".
 					</li>
 					<li>
@@ -93,8 +93,8 @@
 					</li>
 					<li>
 						<strong>Website</strong> refers to Cloudparker, accessible at
-						<a href="https://patentryhub.com" target="_blank" class="text-blue-500 hover:underline"
-							>https://patentryhub.com</a
+						<a href="https://abahansolution.com/" target="_blank" class="text-blue-500 hover:underline"
+							>https://abahansolution.com</a
 						>.
 					</li>
 					<li>
@@ -180,7 +180,7 @@
 				</p>
 
 				<ul class="list-inside list-disc space-y-2 text-base-700">
-					<li>By email: support@patentryhub.com</li>
+					<li>By email: support@abahansolution.com</li>
 				</ul>
 			</div>
 		</div>

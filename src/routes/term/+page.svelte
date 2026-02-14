@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>Terms and Conditions | PatentryHub</title>
+	<title>Terms and Conditions | Abahan Solution</title>
 </svelte:head>
 
 <div class="">
@@ -30,12 +30,12 @@
 				<p class="mb-8 text-sm text-base-400">Last updated: 01 August 2025</p>
 
 				<p class="mb-4 text-base-700">
-					These terms and conditions outline the rules and regulations for the use of PatentryHub
-					Website, located at https://patentryhub.com.
+					These terms and conditions outline the rules and regulations for the use of Abahan Solution
+					Website, located at https://abahansolution.com.
 				</p>
 				<p class="mb-4 text-base-700">
 					By accessing this website we assume you accept these terms and conditions. Do not continue
-					to use https://patentryhub.com if you do not agree to take all of the terms and conditions
+					to use https://abahansolution.com if you do not agree to take all of the terms and conditions
 					stated on this page.
 				</p>
 				<p class="mb-4 text-base-700">
@@ -48,23 +48,23 @@
 
 				<h3 class="mb-4 text-xl font-semibold text-base-800">Cookies</h3>
 				<p class="mb-4 text-base-700">
-					We employ the use of cookies. By accessing https://patentryhub.com, you agreed to use
-					cookies in agreement with the PatentryHub&#x27;s Privacy Policy.
+					We employ the use of cookies. By accessing https://abahansolution.com, you agreed to use
+					cookies in agreement with the Abahan Solution&#x27;s Privacy Policy.
 				</p>
 
 				<h3 class="mb-4 text-xl font-semibold text-base-800">License</h3>
 				<p class="mb-4 text-base-700">
-					Unless otherwise stated, PatentryHub and/or its licensors own the intellectual property
-					rights for all material on https://patentryhub.com. All intellectual property rights are
+					Unless otherwise stated, Abahan Solution and/or its licensors own the intellectual property
+					rights for all material on https://abahansolution.com. All intellectual property rights are
 					reserved.
 				</p>
 
 				<p class="mb-4 text-base-700">You must not:</p>
 				<ul class="mb-4 list-inside list-disc text-base-700">
-					<li>Republish material from https://patentryhub.com</li>
-					<li>Sell, rent or sub-license material from https://patentryhub.com</li>
-					<li>Reproduce, duplicate or copy material from https://patentryhub.com</li>
-					<li>Redistribute content from https://patentryhub.com</li>
+					<li>Republish material from https://abahansolution.com</li>
+					<li>Sell, rent or sub-license material from https://abahansolution.com</li>
+					<li>Reproduce, duplicate or copy material from https://abahansolution.com</li>
+					<li>Redistribute content from https://abahansolution.com</li>
 				</ul>
 
 				<h3 class="mb-4 text-xl font-semibold text-base-800">Hyperlinking to our Content</h3>
