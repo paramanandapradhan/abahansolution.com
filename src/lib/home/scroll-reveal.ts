@@ -28,13 +28,13 @@ const loadGsap = async () => {
 				const gsap =
 					(gsapModule as typeof gsapModule & { gsap?: GsapBundle['gsap'] }).gsap ??
 					gsapModule.default ??
-					(gsapModule as GsapBundle['gsap']);
+					(gsapModule as unknown as GsapBundle['gsap']);
 				const ScrollTrigger =
 					(scrollTriggerModule as typeof scrollTriggerModule & {
 						ScrollTrigger?: GsapBundle['ScrollTrigger'];
 					}).ScrollTrigger ??
 					scrollTriggerModule.default ??
-					(scrollTriggerModule as GsapBundle['ScrollTrigger']);
+					(scrollTriggerModule as unknown as GsapBundle['ScrollTrigger']);
 				gsap.registerPlugin(ScrollTrigger);
 				return { gsap, ScrollTrigger };
 			}

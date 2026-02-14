@@ -1,5 +1,14 @@
 <script lang="ts">
 	import { ScreenDetector } from '@cloudparker/moldex.js';
+	import { page } from '$app/state';
+	import {
+		DEFAULT_OG_IMAGE,
+		buildCanonicalUrl,
+		getOrganizationSchema,
+		getSeoForPath,
+		getWebPageSchema,
+		getWebsiteSchema
+	} from '$lib/seo';
 	import '../app.css';
 	import { onMount } from 'svelte';
 	import type Lenis from 'lenis';
@@ -8,6 +17,20 @@
 	let lenis: Lenis | undefined;
 	let tickerCallback: ((time: number) => void) | undefined;
 	let gsapInstance: (typeof import('gsap'))['default'] | undefined;
+
+	const organizationSchema = getOrganizationSchema();
+	const websiteSchema = getWebsiteSchema();
+
+	const seo = $derived(getSeoForPath(page.url.pathname));
+	const canonicalUrl = $derived(buildCanonicalUrl(page.url.pathname));
+	const ogImageUrl = $derived(buildCanonicalUrl(DEFAULT_OG_IMAGE));
+	const webPageSchema = $derived(
+		getWebPageSchema({
+			pathname: page.url.pathname,
+			title: seo.title,
+			description: seo.description
+		})
+	);
 
 	onMount(() => {
 		let destroyed = false;
@@ -54,6 +77,40 @@
 		};
 	});
 </script>
+
+<svelte:head>
+	<title>{seo.title}</title>
+	<meta name="description" content={seo.description} />
+	<meta name="keywords" content={seo.keywords} />
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+	<link rel="canonical" href={canonicalUrl} />
+	<link rel="alternate" hreflang="en-IN" href={canonicalUrl} />
+	<link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+
+	<meta property="og:site_name" content="Abahan Solutions" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content={canonicalUrl} />
+	<meta property="og:title" content={seo.title} />
+	<meta property="og:description" content={seo.description} />
+	<meta property="og:image" content={ogImageUrl} />
+	<meta property="og:image:alt" content="Abahan Solutions - Admission Guidance and Counseling" />
+	<meta property="og:locale" content="en_IN" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content={seo.title} />
+	<meta name="twitter:description" content={seo.description} />
+	<meta name="twitter:image" content={ogImageUrl} />
+
+	<script type="application/ld+json">
+		{JSON.stringify(organizationSchema)}
+	</script>
+	<script type="application/ld+json">
+		{JSON.stringify(websiteSchema)}
+	</script>
+	<script type="application/ld+json">
+		{JSON.stringify(webPageSchema)}
+	</script>
+</svelte:head>
 
 <ScreenDetector />
 

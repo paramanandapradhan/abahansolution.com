@@ -5,10 +5,6 @@
 	import { goBack, Navbar } from '@cloudparker/moldex.js';
 </script>
 
-<svelte:head>
-	<title>Terms and Conditions | Abahan Solution</title>
-</svelte:head>
-
 <div class="">
 	<Navbar
 		hasLogo
@@ -18,7 +14,7 @@
 		hasTitle
 		hasSubtitle
 		titleClassName="!text-primary-600 !font-black"
-		subtitle="Privacy Policy"
+		subtitle="Terms and Conditions"
 		hasBack
 		onBack={goBack}
 		backButtonClassName="hover:!bg-white hover:!text-base-800"

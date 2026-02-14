@@ -5,10 +5,6 @@
 	import { goBack, Navbar } from '@cloudparker/moldex.js';
 </script>
 
-<svelte:head>
-	<title>Privacy Policy | Abahan Solution</title>
-</svelte:head>
-
 <div class="">
 	<Navbar
 		hasLogo
