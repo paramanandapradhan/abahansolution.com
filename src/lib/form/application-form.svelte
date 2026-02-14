@@ -61,7 +61,7 @@
 			(submission.email || submission.phone)
 		) {
 			try {
-				const response = await fetch('https://formspree.io/f/xldjdjyw', {
+				const response = await fetch('https://formspree.io/f/mzdarpld', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json'
@@ -222,7 +222,7 @@
 					<div class="mt-6 flex flex-wrap items-center gap-4">
 						<button
 							type="submit"
-							class="relative inline-flex items-center justify-center gap-2 rounded-full bg-linear-to-r from-amber-400 via-indigo-400 to-indigo-600 px-6 py-3 text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-white shadow-lg shadow-indigo-200/60 transition hover:-translate-y-0.5 hover:shadow-indigo-300/80 active:translate-y-0"
+							class="relative cursor-pointer inline-flex items-center justify-center gap-2 rounded-full bg-linear-to-r from-amber-400 via-indigo-400 to-indigo-600 px-6 py-3 text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-white shadow-lg shadow-indigo-200/60 transition hover:-translate-y-0.5 hover:shadow-indigo-300/80 active:translate-y-0"
 						>
 							<span class="flex h-2 w-2 rounded-full bg-white/70"></span>
 							Submit application
