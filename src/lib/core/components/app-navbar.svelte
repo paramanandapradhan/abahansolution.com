@@ -17,8 +17,8 @@
 		hasLogo = true,
 		hasTitle = true,
 		titleClassName =
-			'!text-primary-600 dark:!text-slate-100 !font-semibold !text-2xl sm:!text-3xl !leading-tight !px-0 !tracking-tight !uppercase',
-		title = 'Abahan Solutions',
+			'!text-primary-600 dark:!text-slate-100 !font-bold !text-2xl sm:!text-3xl !leading-tight !px-0 !tracking-tight !uppercase',
+		title = 'Abahan',
 		hasSubtitle,
 		subtitle = '',
 		subtitleClassName =
