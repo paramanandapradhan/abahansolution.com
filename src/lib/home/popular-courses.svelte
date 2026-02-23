@@ -18,7 +18,7 @@
 			icon: mdiBookOpenVariantOutline
 		},
 		{
-			title: 'DDS',
+			title: 'BDS',
 			description:
 				'Dental surgery pathway focused on oral health, procedures, and clinical skill development. Builds a solid base for modern dentistry practice.',
 			image: '/images/dds-image.jpg',
